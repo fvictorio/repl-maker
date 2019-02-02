@@ -1,7 +1,7 @@
 const repl = require('repl')
 const vm = require('vm')
 
-module.exports = function makeRepl({historyFile = null, prompt = '> ', evalAsync = true, recoverErrors = true, context = {}} = {}) {
+module.exports = function makeRepl({historyFile = null, prompt = '> ', evalAsync = true, recoverErrors = true, context = {}, onExit = null} = {}) {
   const replOptions = {
     prompt,
     eval: (cmd, context, filename, callback) => {
@@ -33,6 +33,10 @@ module.exports = function makeRepl({historyFile = null, prompt = '> ', evalAsync
 
   if (historyFile) {
     require('repl.history')(r, historyFile)
+  }
+
+  if (onExit) {
+    r.on('exit', onExit);
   }
 }
 
