@@ -75,6 +75,9 @@ The `makeRepl` function accepts an object with these options:
 - `onExit` _(function)_ - A callback that will be executed when the user exits
   the REPL (default: `null`)
 
+It returns [`repl`](https://nodejs.org/api/repl.html) that you can further
+customize.
+
 ## Use cases
 
 If you find yourself opening a node REPL and requiring some stuff of your
