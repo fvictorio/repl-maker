@@ -38,6 +38,8 @@ module.exports = function makeRepl({historyFile = null, prompt = '> ', evalAsync
   if (onExit) {
     r.on('exit', onExit);
   }
+
+  return r;
 }
 
 function isRecoverableError(error) {
