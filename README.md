@@ -1,4 +1,4 @@
-# repl-server
+# repl-maker
 
 Make a customized node REPL with ease.
 
@@ -75,7 +75,7 @@ The `makeRepl` function accepts an object with these options:
 - `onExit` _(function)_ - A callback that will be executed when the user exits
   the REPL (default: `null`)
 
-It returns [`repl`](https://nodejs.org/api/repl.html) that you can further
+It returns a [`REPLServer`](https://nodejs.org/api/repl.html#repl_class_replserver) that you can further
 customize.
 
 ## Use cases
